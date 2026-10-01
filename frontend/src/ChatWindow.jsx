@@ -23,9 +23,12 @@ function ChatWindow() {
 
       <div className="chatInput">
         <div className="userInput">
-          <input placeholder="Ask anything" value={prompt} onChange={(e)=> e.target.value}></input>
+          <input placeholder="Ask anything" value={prompt} onChange={(e)=> e.target.value}>
+          
+
+          </input>
           <div id="submit">
-            <i class="fa-solid fa-arrow-up"></i>
+            <i class="fa-solid fa-arrow-up" onClick={setReply}></i>
           </div>
         </div>
         <p className="info">
