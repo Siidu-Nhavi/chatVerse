@@ -4,12 +4,12 @@ import { MyContext } from "./MyContext";
 import { useContext } from "react";
 
 function ChatWindow() {
-  const [prompt,setPrompt,reply,setReply] = useContext(MyContext);
+  const { prompt, setPrompt, setReply } = useContext(MyContext);
   return (
     <div className="chatWindow">
       <div className="navbar">
         <span>
-          ChatterBox <i class="fa-solid fa-chevron-down"></i>
+          ChatterBox <i className="fa-solid fa-chevron-down"></i>
         </span>
 
         <div className="userIcon">
@@ -23,7 +23,11 @@ function ChatWindow() {
 
       <div className="chatInput">
         <div className="userInput">
-          <input placeholder="Ask anything" value={prompt} onChange={(e)=> e.target.value}>
+          <input
+            placeholder="Ask anything"
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          >
           
 
           </input>
